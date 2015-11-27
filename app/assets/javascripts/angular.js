@@ -24,7 +24,7 @@ app.controller('ImageCtrl', ['$http', function($http){
         console.log(data);
       });
   };
-  ctrl.getImages();
+  this.getImages();
   //create image
   this.createImage = function(){
 

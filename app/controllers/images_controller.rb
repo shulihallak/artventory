@@ -6,6 +6,7 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     @images = Image.all
+    current_user.images.includes(:editions)
   end
 
   # GET /images/1
@@ -29,14 +30,14 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        # format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to @image, notice: 'Image was successfully created.' }
         format.json {
           render :show,
           status: :created,
           location: @image
         }
       else
-        # format.html { render :new }
+        format.html { render :new }
         format.json {
           render json: @image.errors,
           status: :unprocessable_entity
@@ -50,7 +51,7 @@ class ImagesController < ApplicationController
   def update
     respond_to do |format|
       if @image.update(image_params)
-        # format.html { redirect_to @image, notice: 'Image was successfully updated.' }
+        format.html { redirect_to @image, notice: 'Image was successfully updated.' }
         format.json { render :show, status: :ok, location: @image }
       else
         # format.html { render :edit }
