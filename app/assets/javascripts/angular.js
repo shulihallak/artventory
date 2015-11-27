@@ -18,7 +18,7 @@ app.controller('ImageCtrl', ['$http', function($http){
     $http.get('/images').success(
       function(data){
         console.log(data);
-        ctrl.current_user_images = data.images;
+        // ctrl.current_user_images = data.images;
       });
   };
   ctrl.getImages();
@@ -38,11 +38,38 @@ app.controller('ImageCtrl', ['$http', function($http){
         title: this.title,
         dateCreated: this.dateCreated
       }
-    }).success(function(data){
-      console.log(data);
+    }).success(function(imageData){
+      console.log(imageData);
 
       //post editions
+      $http.post('/images' + image.id + '/editions', {
+        authenticity_token: authenticity_token,
+        edition: {
+          size: ctrl.size,
+          number: ctrl.number,
+          soldTo: ctrl.soldTo,
+          saleDate: ctrl.saleDate,
+          saleAmount: ctrl.saleAmount,
+          numberRemaining: ctrl.numberRemaining
 
+        }
+      }).success(function(editiondata){
+        image.editions.push(editiondata.edition);
+
+        ctrl.filename = undefined;
+        ctrl.title = undefined;
+        ctrl.dateCreated = undefined;
+        ctrl.size = undefined;
+        ctrl.number = undefined;
+        ctrl.soldTo = undefined;
+        ctrl.saleDate = undefined;
+        ctrl.saleAmount = undefined;
+        ctrl.numberRemaining = undefined;
+      });
+
+      ctrl.current_user_images.pop();
+      ctrl.current_user_images.push(image);
+      ctrl.getImage();
     });
   };
 
@@ -57,7 +84,7 @@ app.controller('ImageCtrl', ['$http', function($http){
       when('/images',
       { templateUrl: '/angular_templates/images.html.erb',
           controller:  'ImageCtrl',
-          // controllerAs: 'img'
+          controllerAs: 'img'
       // FORM PAGE
     // }).when('/',
     //     { templateUrl: '/angular_templates/image_form.html.erb',

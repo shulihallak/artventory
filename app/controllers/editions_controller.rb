@@ -24,7 +24,7 @@ class EditionsController < ApplicationController
   # POST /editions
   # POST /editions.json
   def create
-    @edition = Edition.new(edition_params)
+    @edition = image.editions.new(editions_params)
 
     respond_to do |format|
       if @edition.save
