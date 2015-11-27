@@ -15,10 +15,15 @@
 </head>
 <base href="/"/>
 <body>
+  <%= render partial: 'layouts/header' %>
 
-  <header ng-controller="HeaderController as ctrl">
-    <h3>Welcome {{ctrl.current_user.email}}</h3>
-  </header>
+  <% if flash[:message] %>
+    <div class="alert">
+      <%= flash[:message] %>
+    </div>
+  <% end %>
+
+  <%= render partial: 'layouts/nav' %>
 
   <%= yield %>
 

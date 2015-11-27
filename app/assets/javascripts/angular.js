@@ -13,6 +13,39 @@ app.controller('HeaderController', ['$http',
 app.controller('ImageCtrl', ['$http', function($http){
   var authenticity_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   var ctrl = this;
+  //Get all images
+  this.getImages = function(){
+    $http.get('/images').success(
+      function(data){
+        console.log(data);
+        ctrl.current_user_images = data.images;
+      });
+  };
+  ctrl.getImages();
+  //create image
+  this.createImage = function(){
+    ctrl.current_user_images.push({
+      filename: this.filename,
+      title: this.title,
+      dateCreated: this.dateCreated
+    });
+
+    //post image properties
+    $http.post('/images', {
+      authenticity_token: authenticity_token,
+      image: {
+        filename: this.filename,
+        title: this.title,
+        dateCreated: this.dateCreated
+      }
+    }).success(function(data){
+      console.log(data);
+
+      //post editions
+
+    });
+  };
+
 }]);
 
   //routes
@@ -24,12 +57,12 @@ app.controller('ImageCtrl', ['$http', function($http){
       when('/images',
       { templateUrl: '/angular_templates/images.html.erb',
           controller:  'ImageCtrl',
-          controllerAs: 'img'
+          // controllerAs: 'img'
       // FORM PAGE
-    }).when('/form',
-        { templateUrl: '/angular_templates/form.html.erb',
-          controller:  'MoodController',
-          controllerAs: 'mood'
+    // }).when('/',
+    //     { templateUrl: '/angular_templates/image_form.html.erb',
+    //       controller:  'ImageCtrl',
+    //       controllerAs: 'img'
       // Image Show
     }).when('/images/:id',
         { templateUrl: '/angular_templates/images.html.erb',

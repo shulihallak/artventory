@@ -1,0 +1,11 @@
+<div class="container" ng-controller="ImageCtrl as img">
+
+  <h3>Add Image</h3>
+  <form class="" ng-submit="img.createImage()">
+    <input type="text" ng-model="img.filename" placeholder="filename"/>
+    <input type="text" ng-model="img.title" placeholder="image title"/>
+    <input type="date" ng-model="img.dateCreated" placeholder="date created"/>
+    <br>
+    <input type="submit" name="name" value="Create Image">
+  </form>
+</div>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :images do
+  resources :images, defaults: {format: :json} do
     resources :editions, shallow: true
   end
   resources :users, defaults: { format: :json}
