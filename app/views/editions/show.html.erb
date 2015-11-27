@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @edition.image %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @edition.size %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @edition.number %>
+</p>
+
+<p>
+  <strong>Soldto:</strong>
+  <%= @edition.soldTo %>
+</p>
+
+<p>
+  <strong>Saledate:</strong>
+  <%= @edition.saleDate %>
+</p>
+
+<p>
+  <strong>Saleamount:</strong>
+  <%= @edition.saleAmount %>
+</p>
+
+<p>
+  <strong>Numberremaining:</strong>
+  <%= @edition.numberRemaining %>
+</p>
+
+<%= link_to 'Edit', edit_edition_path(@edition) %> |
+<%= link_to 'Back', editions_path %>

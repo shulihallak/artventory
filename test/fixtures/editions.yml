@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image_id: 
+  size: MyString
+  number: 1
+  soldTo: MyString
+  saleDate: 2015-11-26
+  saleAmount: 9.99
+  numberRemaining: 1
+
+two:
+  image_id: 
+  size: MyString
+  number: 1
+  soldTo: MyString
+  saleDate: 2015-11-26
+  saleAmount: 9.99
+  numberRemaining: 1

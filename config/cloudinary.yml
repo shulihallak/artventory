@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: photogr8
+  api_key: '584933485675615'
+  api_secret: xtPqrGduQffdEm0EUCcxBGdWHFE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: photogr8
+  api_key: '584933485675615'
+  api_secret: xtPqrGduQffdEm0EUCcxBGdWHFE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: photogr8
+  api_key: '584933485675615'
+  api_secret: xtPqrGduQffdEm0EUCcxBGdWHFE
+  enhance_image_tag: true
+  static_image_support: false
