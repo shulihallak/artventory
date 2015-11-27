@@ -7,23 +7,27 @@ app.controller('HeaderController', ['$http',
     $http.get('/session').success(function(data){
       controller.current_user = data.current_user;
       console.log(controller.current_user);
+      // console.log(controller.current_user_id);
     });
   }]);
 
 app.controller('ImageCtrl', ['$http', function($http){
   var authenticity_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
   var ctrl = this;
+  ctrl.images = [];
+  ctrl.editions = [];
   //Get all images
   this.getImages = function(){
     $http.get('/images').success(
       function(data){
+        ctrl.current_user_images = data.images;
         console.log(data);
-        // ctrl.current_user_images = data.images;
       });
   };
   ctrl.getImages();
   //create image
   this.createImage = function(){
+
     ctrl.current_user_images.push({
       filename: this.filename,
       title: this.title,

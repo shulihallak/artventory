@@ -1,5 +1,9 @@
 <div class="container" ng-controller="ImageCtrl as img">
 
+<div ng-repeat="img in img.images">
+  {{img}}
+</div>
+
   <h3>Add Image</h3>
   <form class="" ng-submit="img.createImage()">
     <input type="text" ng-model="img.filename" placeholder="filename"/>
