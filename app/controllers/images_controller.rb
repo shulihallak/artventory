@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = @current_user.images
     current_user.images.includes(:editions)
   end
 
@@ -26,7 +26,8 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @image = current_user.images.new(images_params)
+    @image = current_user.images.new(image_params)
+    @image.user_id = current_user.id
 
     respond_to do |format|
       if @image.save

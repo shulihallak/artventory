@@ -13,7 +13,7 @@ class SessionController < ApplicationController
 
         flash[:message] = "Successfully logged in"
 
-        redirect_to application_angular_path
+        redirect_to images_path
 
       else
         flash[:message] = "Email / Password combo does not exist"

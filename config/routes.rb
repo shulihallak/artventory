@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :images, defaults: {format: :json} do
+  resources :images do
     resources :editions, shallow: true
   end
-  resources :users, defaults: { format: :json}
+  resources :users
 
   root 'application#enter'
-  get 'application/angular'
+  # get 'application/angular'
 
   get    'signup'  => 'users#new'
   get '/session' => 'session#current_user', defaults: { format: :json}
