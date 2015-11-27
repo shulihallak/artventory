@@ -44,7 +44,7 @@ class ImagesController < ApplicationController
           status: :unprocessable_entity
         }
       end
-      redirect_to image_editions_path
+      # redirect_to image_editions_path
     end
   end
 
@@ -65,6 +65,7 @@ class ImagesController < ApplicationController
   # DELETE /images/1
   # DELETE /images/1.json
   def destroy
+    image = Image.find(params[:image_id])
     @image.destroy
     respond_to do |format|
       # format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
@@ -80,6 +81,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:filename, :title, :dateCreated, :users_id)
+      params.require(:image).permit(:filename, :title, :dateCreated, :users_id, :id)
     end
 end
