@@ -20,5 +20,13 @@
   <%= @image.user_id %>
 </p>
 
+<h3>Edition Information</h3>
+<% if @image.editions.any? %>
+<ul>
+  <% @image.editions.each do |e| %>
+  <li><%= editions %></li>
+</ul>
+<%end%>
+<%end%>
 <%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>

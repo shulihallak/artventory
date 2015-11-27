@@ -44,6 +44,7 @@ class ImagesController < ApplicationController
           status: :unprocessable_entity
         }
       end
+      redirect_to image_editions_path
     end
   end
 
