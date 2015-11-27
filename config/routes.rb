@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   resources :images do
     resources :editions, shallow: true
   end
-  resources :users
+  resources :users, defaults: { format: :json}
 
   root 'application#enter'
+  get 'application/angular'
 
   get    'signup'  => 'users#new'
-  get    'session'   => 'session#new'
+  get '/session' => 'session#current_user', defaults: { format: :json}
   post   'session'   => 'session#create'
   delete 'session'  => 'session#destroy'
   # The priority is based upon order of creation: first created -> highest priority.

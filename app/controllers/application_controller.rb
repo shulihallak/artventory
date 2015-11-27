@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   def enter
     render '/enter'
   end
+
+  def angular
+    render 'layouts/angular'
+  end
   def current_user
     if session[:session_token]
       @current_user ||= User.find_by(session_token: session[:session_token])
@@ -26,4 +30,8 @@ class ApplicationController < ActionController::Base
   def require_current_user
     redirect_to root_path unless logged_in?
   end
+
+  def require_current_user
+  redirect_to root_path unless current_user
+end
 end

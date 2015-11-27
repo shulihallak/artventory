@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>ArtVentory</title>
-    <%= stylesheet_link_tag    'angular', media: 'all', 'data-turbolinks-track' => true %>
+<html ng-app="ImageApp">
+<head>
+  <meta charset="utf-8">
+  <title>ArtVentory</title>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
+  <%= javascript_include_tag 'angular', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'normalize', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'skeleton', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <%= yield %>
-      <%= javascript_include_tag 'angular', 'data-turbolinks-track' => true %>
-  </body>
+
+</head>
+<base href="/"/>
+<body>
+
+  <header ng-controller="HeaderController as ctrl">
+    <h3>Welcome {{ctrl.current_user.email}}</h3>
+  </header>
+
+  <%= yield %>
+
+  <div ng-view>
+
+  </div>
+
+
+</body>
 </html>

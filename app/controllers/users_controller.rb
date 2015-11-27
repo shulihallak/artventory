@@ -31,12 +31,12 @@ class UsersController < ApplicationController
         flash[:message] = "Account successfully created, please log in"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
-        
+
       else
 
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
-        redirect_to root_path
+        
       end
     end
   end
