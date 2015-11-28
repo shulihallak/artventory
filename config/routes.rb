@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount Attachinary::Engine => "/attachinary"
+  
   resources :images do
     resources :editions, shallow: true
   end
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   post   'session'   => 'session#create'
   delete 'session'  => 'session#destroy'
 
-  mount Attachinary::Engine => "/attachinary"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
