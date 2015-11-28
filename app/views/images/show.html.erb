@@ -11,16 +11,11 @@
     <%= @image.title %>
   </p>
 
-
-
-  <%= cl_image_tag(image.photo.path, { size: '300x300'}) %>
-
-
-
-
-
-
-
+<div class="">
+  <% @image.photos.each do |photo| %>
+    <%= cl_image_tag(photos.path, { size: '300x300', crop: :fit }) %>
+<% end %>
+</div>
   <p>
     <strong>Datecreated:</strong>
     <%= @image.dateCreated %>

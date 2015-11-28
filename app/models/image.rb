@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  has_attachment :photo
+  has_attachments :photos
   belongs_to :users
   has_many :editions, dependent: :destroy
   accepts_nested_attributes_for :editions,
