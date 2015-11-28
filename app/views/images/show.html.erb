@@ -10,12 +10,11 @@
     <strong>Title:</strong>
     <%= @image.title %>
   </p>
-  <p>
-    <%= image_tag @image.image.url %>
-    <%= image_tag @image.image.url(:thumbnail) %>
-    
-    <%= image_tag @image.image.url(:detail) %>
-  </p>
+
+    <% @image.photos.each do |photo| %>
+      <%= cl_image_tag(photo.path, { size: '125x125', crop: :fit }) %>
+  <% end %>
+
 
   <p>
     <strong>Datecreated:</strong>
