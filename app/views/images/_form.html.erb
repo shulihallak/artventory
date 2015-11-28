@@ -13,32 +13,20 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :filename %><br>
+      <%= f.label :'File Name' %><br>
       <%= f.text_field :filename %>
     </div>
     <div class="field">
-      <%= f.label :title %><br>
+      <%= f.label :'Title' %><br>
       <%= f.text_field :title %>
     </div>
-    <div class="field">
-      <%= f.label :dateCreated %><br>
-      <%= f.date_select :dateCreated %>
+    <div type='date' class="datepicker">
+      <%= f.label :'Date Created' %><br>
+      <%= f.date_field :dateCreated %>
     </div>
-
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-
 </div>
 <div class="container">
   <%= f.fields_for :editions do |e| %>
-
-
-    <div class="field">
-      <%= e.label :image_id %><br>
-      <%= e.text_field :image_id %>
-    </div>
     <div class="field">
       <%= e.label :'Image Size' %><br>
       <%= e.text_field :size %>
@@ -53,7 +41,7 @@
     </div>
     <div class="field">
       <%= e.label :'Sale Date' %><br>
-      <%= e.date_select :saleDate %>
+      <%= e.date_field :saleDate %>
     </div>
     <div class="field">
       <%= e.label :'Sale Amount' %><br>
@@ -63,13 +51,13 @@
       <%= e.label :'Number Remaining' %><br>
       <%= e.number_field :numberRemaining %>
     </div>
-    <div class="actions">
-      <%= e.submit %>
-    </div>
+
   <% end %>
 
 
 </div>
 
-
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

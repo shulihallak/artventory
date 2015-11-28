@@ -29,6 +29,7 @@ class ImagesController < ApplicationController
   def create
     @image = current_user.images.new(image_params)
     @image.user_id = current_user.id
+    # @image.editions.first.current_user.id = current_user.id
 
     respond_to do |format|
       if @image.save
@@ -38,6 +39,7 @@ class ImagesController < ApplicationController
           status: :created,
           location: @image
         }
+
       else
         format.html { render :new }
         format.json {
@@ -81,6 +83,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:filename, :title, :dateCreated, :users_id)
+      params.require(:image).permit(:filename, :title, :dateCreated, :users_id, editions_attributes: [:size, :number, :soldTo, :saleDate, :saleAmount, :numberRemaining])
     end
 end

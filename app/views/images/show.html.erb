@@ -24,7 +24,12 @@
 <% if @image.editions.any? %>
 <ul>
   <% @image.editions.each do |e| %>
-  <li><%= editions %></li>
+  <li><%= e.size %></li>
+  <li><%= e.number %></li>
+  <li><%= e.soldTo %></li>
+  <li><%= e.saleDate %></li>
+  <li><%= e.saleAmount %></li>
+  <li><%= e.numberRemaining %></li>
 </ul>
 <%end%>
 <%end%>

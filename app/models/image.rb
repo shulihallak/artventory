@@ -5,5 +5,5 @@ class Image < ActiveRecord::Base
     :allow_destroy => true
   mount_uploader :picture, PictureUploader
 
-
+  # validates_associated
 end

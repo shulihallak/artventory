@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
 gem 'cloudinary'
 
-
+gem 'jquery-ui-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
