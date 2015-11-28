@@ -31,5 +31,45 @@
     </div>
 
 </div>
+<div class="container">
+  <%= f.fields_for :editions do |e| %>
+
+
+    <div class="field">
+      <%= e.label :image_id %><br>
+      <%= e.text_field :image_id %>
+    </div>
+    <div class="field">
+      <%= e.label :'Image Size' %><br>
+      <%= e.text_field :size %>
+    </div>
+    <div class="field">
+      <%= e.label :'Number in Edition' %><br>
+      <%= e.number_field :number %>
+    </div>
+    <div class="field">
+      <%= e.label :'Sold To' %><br>
+      <%= e.text_field :soldTo %>
+    </div>
+    <div class="field">
+      <%= e.label :'Sale Date' %><br>
+      <%= e.date_select :saleDate %>
+    </div>
+    <div class="field">
+      <%= e.label :'Sale Amount' %><br>
+      <%= e.text_field :saleAmount %>
+    </div>
+    <div class="field">
+      <%= e.label :'Number Remaining' %><br>
+      <%= e.number_field :numberRemaining %>
+    </div>
+    <div class="actions">
+      <%= e.submit %>
+    </div>
+  <% end %>
+
+
+</div>
+
 
 <% end %>

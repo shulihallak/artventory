@@ -4,4 +4,6 @@ class Image < ActiveRecord::Base
   accepts_nested_attributes_for :editions,
     :allow_destroy => true
   mount_uploader :picture, PictureUploader
+
+
 end
