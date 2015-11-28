@@ -10,6 +10,12 @@
     <strong>Title:</strong>
     <%= @image.title %>
   </p>
+  <p>
+    <%= image_tag @image.image.url %>
+    <%= image_tag @image.image.url(:thumbnail) %>
+    
+    <%= image_tag @image.image.url(:detail) %>
+  </p>
 
   <p>
     <strong>Datecreated:</strong>
