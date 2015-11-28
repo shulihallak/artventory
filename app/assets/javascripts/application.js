@@ -18,8 +18,9 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//= require turbolinks
-//= require_tree .
+//=  require turbolinks
+// require_tree .
 $(document).on("page:load ready", function(){
-    $("input.datepicker").datepicker();
+ $("input.datepicker").datepicker();
+  $('.attachinary-input').attachinary();
 });
