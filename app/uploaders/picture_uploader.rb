@@ -7,6 +7,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
   # include Cloudinary::CarrierWave
 
+  # image.photo_urls = %w[ http://path/to/photo1.jpg http://path/to/photo2.jpg]
   process :convert => 'jpg'
 
   version :detail do

@@ -18,7 +18,7 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
-//=  require turbolinks
+//= require turbolinks
 // require_tree .
 $(document).on("page:load ready", function(){
   $('.attachinary-input').attachinary();
