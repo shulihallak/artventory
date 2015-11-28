@@ -1,65 +1,59 @@
 <div class="container">
   <%= form_for(@image, :html => {:multipart => true}) do |f| %>
-    <% if @image.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
+  <% if @image.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
-        <ul>
-        <% @image.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <ul>
+      <% @image.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
 
-    <div class="field">
-      <%= f.label :'File Name' %><br>
-      <%= f.text_field :filename %>
-    </div>
-    <div class="field">
-      <%= f.label :'Title' %><br>
-      <%= f.text_field :title %>
-    </div>
-    <div type='date' class="datepicker">
-      <%= f.label :'Date Created' %><br>
-      <%= f.date_field :dateCreated %>
-    </div>
+  <div class="field">
+    <%= f.label :'File Name' %><br>
+    <%= f.text_field :filename %>
+  </div>
+  <div class="field">
+    <%= f.label :'Title' %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div type='date' class="datepicker">
+    <%= f.label :'Date Created' %><br>
+    <%= f.date_field :dateCreated %>
+  </div>
 </div>
 <div class="container">
   <%= f.fields_for :editions do |e| %>
-    <div class="field">
-      <%= e.label :'Image Size' %><br>
-      <%= e.text_field :size %>
-    </div>
-    <div class="field">
-      <%= e.label :'Number in Edition' %><br>
-      <%= e.number_field :number %>
-    </div>
-    <div class="field">
-      <%= e.label :'Sold To' %><br>
-      <%= e.text_field :soldTo %>
-    </div>
-    <div class="field">
-      <%= e.label :'Sale Date' %><br>
-      <%= e.date_field :saleDate %>
-    </div>
-    <div class="field">
-      <%= e.label :'Sale Amount' %><br>
-      <%= e.text_field :saleAmount %>
-    </div>
-    <div class="field">
-      <%= e.label :'Number Remaining' %><br>
-      <%= e.number_field :numberRemaining %>
-    </div>
-
-
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+  <div class="field">
+    <%= e.label :'Image Size' %><br>
+    <%= e.text_field :size %>
+  </div>
+  <div class="field">
+    <%= e.label :'Number in Edition' %><br>
+    <%= e.number_field :number %>
+  </div>
+  <div class="field">
+    <%= e.label :'Sold To' %><br>
+    <%= e.text_field :soldTo %>
+  </div>
+  <div class="field">
+    <%= e.label :'Sale Date' %><br>
+    <%= e.date_field :saleDate %>
+  </div>
+  <div class="field">
+    <%= e.label :'Sale Amount' %><br>
+    <%= e.text_field :saleAmount %>
+  </div>
+  <div class="field">
+    <%= e.label :'Number Remaining' %><br>
+    <%= e.number_field :numberRemaining %>
+  </div>
   <% end %>
-
-
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 </div>
-
-
 <% end %>
