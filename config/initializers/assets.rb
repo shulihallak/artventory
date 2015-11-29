@@ -8,4 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( search.js application.css app.css materialize.css materialize.min.css normalize.css skeleton.css app.js materialize.js jquery.min.js angular.js jquery.js, jquery.ui.widget.js jquery.iframe-transport.js jquery.fileupload.js jquery.cloudinary.js)
+Rails.application.config.assets.precompile += %w( search.js application.css app.css materialize.css materialize.min.css normalize.css skeleton.css app.js materialize.js jquery.min.js angular.js jquery.js, jquery.ui.widget.js jquery.iframe-transport.js jquery.fileupload.js jquery.cloudinary.js )

@@ -22,8 +22,8 @@
   </div>
   <div class="field">
     <%= f.label :'Upload Image' %>
-     <%= cl_image_upload_tag(:image_id) %>
-    <!-- <%= f.attachinary_file_field :photos%> -->
+     <!-- <%= cl_image_upload_tag(:image_id) %> -->
+    <%= f.attachinary_file_field :photos%>
   </div>
   <div type='date' class="datepicker">
     <%= f.label :'Date Created' %><br>

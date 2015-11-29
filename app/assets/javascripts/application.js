@@ -18,6 +18,8 @@
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require pickadate/picker
+//= require pickadate/picker.date 
 //= require turbolinks
 // require_tree .
 $(document).on("page:load ready", function(){

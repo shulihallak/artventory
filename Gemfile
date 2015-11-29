@@ -32,6 +32,7 @@ gem 'attachinary'
 
 gem 'jquery-ui-rails'
 gem "jquery-fileupload-rails"
+gem 'pickadate-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -9,9 +9,10 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # image.photo_urls = %w[ http://path/to/photo1.jpg http://path/to/photo2.jpg]
   process :convert => 'jpg'
-
+  cloudinary_transformation :image_metadata=>true
   version :detail do
     process :resize_to_fill => [870, 261]
+    process :exif => true
   end
 
   version :small do
