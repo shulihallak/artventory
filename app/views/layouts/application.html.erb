@@ -4,9 +4,12 @@
   <title>Artventory</title>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'materialize', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'materialize', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag  'normalize', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag  'skeleton', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'app', media: 'all', 'data-turbolinks-track' => true %>
   <!-- <%= stylesheet_link_tag  'app', media: 'all', 'data-turbolinks-track' => true %> -->
   <%= cloudinary_js_config %>
   <%= csrf_meta_tags %>
@@ -17,6 +20,12 @@
 </head>
 
 <body>
+  <nav class="z-depth-0 white">
+    <ul>
+      <li><a href="<%=images_path%>">Images</a></li>
+      <li><a href="<%=users_path%>">Profile</a></li>
+    </ul>
+  </nav>
 
 
 <%= yield %>

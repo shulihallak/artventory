@@ -31,10 +31,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-}
 
 body {
   display: flex;
@@ -61,7 +57,7 @@ text-align: center;
 
 
 a {
-color: #9DBDC6;
+background-color: white;
 }
 
 .btn-flat {
