@@ -30,7 +30,9 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
 
-gem 'jquery-ui-rails'
+group :assets do
+  gem 'jquery-ui-rails', :git => 'https://github.com/joliss/jquery-ui-rails'
+end
 gem "jquery-fileupload-rails"
 gem 'pickadate-rails'
 
