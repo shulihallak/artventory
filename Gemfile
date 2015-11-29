@@ -35,7 +35,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'attachinary'
 
-gem "payday"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'puma'
