@@ -3,13 +3,17 @@
 <head>
   <title>ArtVentory</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'app', 'data-turbolinks-track' => true %>
+
   <%= javascript_include_tag 'vegas', 'data-turbolinks-track' => true %>
 
   <%= stylesheet_link_tag  'vegas', media: 'all', 'data-turbolinks-track' => true %>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  <%= javascript_include_tag 'materialize', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag  'materialize', media: 'all', 'data-turbolinks-track' => true %>
+
   <%= stylesheet_link_tag  'app', media: 'all', 'data-turbolinks-track' => true %>
 
   <%= cloudinary_js_config %>
