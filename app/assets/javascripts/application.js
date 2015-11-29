@@ -13,7 +13,6 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require vegas
 //= require jquery-ui
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
@@ -21,7 +20,7 @@
 // require cloudinary/jquery.cloudinary
 //= require cloudinary
 //= require attachinary
-//= require vegas
+
 
 // require dropzone
 //= require turbolinks
