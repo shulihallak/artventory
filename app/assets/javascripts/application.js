@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require vegas
-//= require jquery-ui
+// require jquery-ui
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
 //= require jquery.fileupload
@@ -23,7 +23,7 @@
 
 // require dropzone
 //= require turbolinks
-// require_tree .
+//= require_tree .
 $(document).on("page:load ready", function(){
   $('.attachinary-input').attachinary();
   $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
