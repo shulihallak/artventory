@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require vegas
 // require jquery-ui
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
