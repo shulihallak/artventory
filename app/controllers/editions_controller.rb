@@ -82,6 +82,6 @@ class EditionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def edition_params
-      params.require(:edition).permit(:image_id, :size, :number, :soldTo, :saleDate, :saleAmount, :numberRemaining)
+      params.require(:edition).permit(:image_id, :id, :size, :number, :soldTo, :saleDate, :saleAmount, :numberRemaining)
     end
 end

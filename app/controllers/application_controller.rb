@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   def enter
+    @disable_nav = true
     render '/enter'
+
   end
 
   def angular

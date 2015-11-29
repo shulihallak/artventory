@@ -4,6 +4,7 @@
   <title>Artventory</title>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'app', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'materialize', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag  'materialize', media: 'all', 'data-turbolinks-track' => true %>
@@ -19,13 +20,8 @@
 </head>
 
 <body>
-  <nav class="z-depth-0 white">
-    <ul>
-      <li><a href="<%=images_path%>">Images</a></li>
-      <li><a href="<%=users_path%>">Profile</a></li>
-    </ul>
-  </nav>
 
+<%= render 'layouts/nav' unless @disable_nav %>
 
 <%= yield %>
 

@@ -8,7 +8,7 @@
       <th>Filename</th>
       <th>Title</th>
       <th>Date created</th>
-      <th>Image Thumbnail</th>
+      <th>Image Preview</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= image.title %></td>
         <td><%= image.dateCreated %></td>
         <td>    <% image.photos.each do |photo| %>
-                <%= cl_image_tag(photo.path, { size: '50x50', crop: :fit }) %>
+                <%= cl_image_tag(photo.path, { size: '100x100', crop: :fit }) %>
             <% end %>
           </td>
         <td><%= link_to 'Show', image %></td>

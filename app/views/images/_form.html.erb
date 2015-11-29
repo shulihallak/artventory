@@ -1,5 +1,7 @@
-<div class="container col s12">
-  <%= form_for(@image, :html => {:multipart => true}) do |f| %>
+<br>
+
+<div class="container">
+  <%= form_for(@image, :html => {class: 'col s12', :multipart => true}) do |f| %>
   <% if @image.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
@@ -12,53 +14,72 @@
   </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :'File Name' %><br>
-    <%= f.text_field :filename %>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.label :'File Name' %><br>
+      <%= f.text_field :filename, :placeholder => 'reference filename' %>
+    </div>
+
   </div>
-  <div class="field">
+  <div class="row">
+    <div class="input-field col s6">
     <%= f.label :'Title' %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  </div>
+  <div class="row">
     <%= f.label :'Upload Image' %>
      <!-- <%= cl_image_upload_tag(:image_id) %> -->
     <%= f.attachinary_file_field :photos%>
   </div>
-  <div type='date' class="datepicker">
+  <div class='row'>
+    <div class="input-field col s6">
     <%= f.label :'Date Created' %><br>
     <%= f.date_field :dateCreated %>
+  </div>
   </div>
 </div>
 <div class="container">
   <%= f.fields_for :editions do |e| %>
-  <div class="field">
+  <div class="row">
+    <div class="input-field col s6">
     <%= e.label :'Image Size' %><br>
     <%= e.text_field :size %>
   </div>
-  <div class="field">
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
     <%= e.label :'Number in Edition' %><br>
     <%= e.number_field :number %>
   </div>
-  <div class="field">
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
     <%= e.label :'Sold To' %><br>
     <%= e.text_field :soldTo %>
   </div>
-  <div class="field">
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
     <%= e.label :'Sale Date' %><br>
     <%= e.date_field :saleDate %>
   </div>
-  <div class="field">
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
     <%= e.label :'Sale Amount' %><br>
     <%= e.text_field :saleAmount %>
   </div>
-  <div class="field">
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
     <%= e.label :'Number Remaining' %><br>
     <%= e.number_field :numberRemaining %>
   </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
   <% end %>
-</div>
-<div class="actions">
-  <%= f.submit %>
 </div>
 <% end %>
