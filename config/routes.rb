@@ -1,17 +1,21 @@
 Rails.application.routes.draw do
 
-  resources :images, defaults: {format: :json} do
+  mount Attachinary::Engine => "/attachinary"
+  
+  resources :images do
     resources :editions, shallow: true
   end
-  resources :users, defaults: { format: :json}
+  resources :users
 
   root 'application#enter'
-  get 'application/angular'
+  # get 'application/angular'
 
   get    'signup'  => 'users#new'
   get '/session' => 'session#current_user', defaults: { format: :json}
   post   'session'   => 'session#create'
   delete 'session'  => 'session#destroy'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

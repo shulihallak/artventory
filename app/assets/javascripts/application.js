@@ -12,5 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require cloudinary/jquery.cloudinary
+//= require attachinary
+//= require pickadate/picker
+//= require pickadate/picker.date 
 //= require turbolinks
-//= require_tree .
+// require_tree .
+$(document).on("page:load ready", function(){
+  $('.attachinary-input').attachinary();
+  $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
+  $('.progress_bar').css('width', Math.round((data.loaded * 100.0) / data.total) + '%');
+   $("input.datepicker").datepicker();
+});
+});

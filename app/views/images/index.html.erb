@@ -7,8 +7,8 @@
     <tr>
       <th>Filename</th>
       <th>Title</th>
-      <th>Datecreated</th>
-      <th>Users</th>
+      <th>Date created</th>
+      <th>Image Thumbnail</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,10 +19,13 @@
         <td><%= image.filename %></td>
         <td><%= image.title %></td>
         <td><%= image.dateCreated %></td>
-        <td><%= image.users %></td>
+        <td>    <% image.photos.each do |photo| %>
+                <%= cl_image_tag(photo.path, { size: '50x50', crop: :fit }) %>
+            <% end %>
+          </td>
         <td><%= link_to 'Show', image %></td>
         <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', image, method: :delete, data: { confirm: 'Are you sure? This action cannot be undone' } %></td>
       </tr>
     <% end %>
   </tbody>

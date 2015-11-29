@@ -4,17 +4,23 @@ class EditionsController < ApplicationController
   # GET /editions
   # GET /editions.json
   def index
-    @editions = Edition.all
+    image = Image.find(params[:image_id])
+    @editions = image.editions
   end
 
   # GET /editions/1
   # GET /editions/1.json
   def show
+    image = Image.find(params[:image_id])
+    @edition = image.edition.find(params[:image_id])
+
+
   end
 
   # GET /editions/new
   def new
-    @edition = Edition.new
+    image = Image.find(params[:image_id])
+    @edition = image.edition
   end
 
   # GET /editions/1/edit
@@ -24,7 +30,9 @@ class EditionsController < ApplicationController
   # POST /editions
   # POST /editions.json
   def create
+    image = Image.find(params[:image_id])
     @edition = image.editions.new(editions_params)
+    @edition.image_id = @image.id
 
     respond_to do |format|
       if @edition.save
@@ -40,6 +48,8 @@ class EditionsController < ApplicationController
   # PATCH/PUT /editions/1
   # PATCH/PUT /editions/1.json
   def update
+    image = Image.find(params[:image_id])
+    @edition = image.edition.find(params[:id])
     respond_to do |format|
       if @edition.update(edition_params)
         format.html { redirect_to @edition, notice: 'Edition was successfully updated.' }
@@ -54,6 +64,9 @@ class EditionsController < ApplicationController
   # DELETE /editions/1
   # DELETE /editions/1.json
   def destroy
+    image = Image.find(params[:image_id])
+    @edition = image.edition.find(params[:id])
+
     @edition.destroy
     respond_to do |format|
       format.html { redirect_to editions_url, notice: 'Edition was successfully destroyed.' }
