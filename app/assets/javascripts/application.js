@@ -12,12 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require vegas
 //= require jquery-ui
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
 //= require jquery.fileupload
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
+//= require vegas
+
 // require dropzone
 //= require turbolinks
 // require_tree .

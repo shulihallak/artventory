@@ -35,6 +35,8 @@ gem "jquery-fileupload-rails"
 gem 'pickadate-rails'
 
 
+gem 'pcs_vegas'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
