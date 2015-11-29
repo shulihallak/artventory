@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   def enter
     @disable_nav = true
     render '/enter'
-
   end
 
   def angular

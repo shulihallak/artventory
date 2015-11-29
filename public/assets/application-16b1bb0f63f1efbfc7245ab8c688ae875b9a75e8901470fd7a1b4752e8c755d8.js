@@ -13466,7 +13466,7 @@ var widget = $.widget;
     if (cloud_name.match(/^\//) && !secure) {
       return "/res" + cloud_name;
     }
-    
+
     var prefix = secure ? 'https://' : (window.location.protocol === 'file:' ? "file://" : 'http://');
     prefix = protocol ? protocol + '//' : prefix;
 
@@ -13484,7 +13484,7 @@ var widget = $.widget;
       }
       prefix += secure_distribution;
     } else if (cname) {
-      var subdomain = cdn_subdomain ? "a" + ((crc32(public_id) % 5) + 1) + "." : "";      
+      var subdomain = cdn_subdomain ? "a" + ((crc32(public_id) % 5) + 1) + "." : "";
       prefix += subdomain + cname;
     } else {
       prefix += (private_cdn ? cloud_name + "-res" : "res");
@@ -13637,7 +13637,7 @@ var widget = $.widget;
         return null;
     }
   }
-  
+
   function join_pair(key, value) {
     if (!value) {
       return undefined;
@@ -13768,7 +13768,7 @@ var widget = $.widget;
       } else {
         video_options.poster = cloudinary_url(public_id, $.extend({}, DEFAULT_POSTER_OPTIONS, options));
       }
-      
+
       if (!video_options.poster) delete video_options.poster;
 
       var html = '<video ';
@@ -13784,7 +13784,7 @@ var widget = $.widget;
       if (video_options.hasOwnProperty("html_width")) video_options.width = option_consume(video_options, 'html_width');
       if (video_options.hasOwnProperty("html_height")) video_options.height = option_consume(video_options, 'html_height');
       html = html + html_attrs(video_options) + '>';
-      if (multi_source) {          
+      if (multi_source) {
         for(var i = 0; i < source_types.length; i++) {
           var source_type = source_types[i];
           var transformation = source_transformation[source_type] || {};
@@ -14406,7 +14406,7 @@ var widget = $.widget;
         pause: function () {},
         walk:  function () {},
         slides: [
-            // {   
+            // {
             //  src:                null,
             //  color:              null,
             //  delay:              null,
@@ -14471,7 +14471,7 @@ var widget = $.widget;
         if (this.settings.animationRegister instanceof Array === false) {
             this.settings.animationRegister = [ this.settings.animationRegister ];
         }
-        
+
         this.transitions = this.transitions.concat(this.settings.transitionRegister);
         this.animations  = this.animations.concat(this.settings.animationRegister);
 
@@ -14504,7 +14504,7 @@ var widget = $.widget;
             // Wrapper with content
             if (!isBody) {
                 this.$elmt.css('height', this.$elmt.css('height'));
-                
+
                 $wrapper = $('<div class="vegas-wrapper">')
                     .css('overflow', this.$elmt.css('overflow'))
                     .css('padding',  this.$elmt.css('padding'));
@@ -14591,7 +14591,7 @@ var widget = $.widget;
             if (this.total > 1 && !this.paused && !this.noshow) {
                 this.timeout = setTimeout(function () {
                     self.next();
-                }, this._options('delay')); 
+                }, this._options('delay'));
             }
         },
 
@@ -14624,7 +14624,7 @@ var widget = $.widget;
         },
 
         _video: function (srcs) {
-            var video, 
+            var video,
                 source,
                 cacheKey = srcs.toString();
 
@@ -14670,7 +14670,7 @@ var widget = $.widget;
             var self   = this,
                 delay  = duration / 10,
                 volume = video.volume + 0.09;
-            
+
             if (volume < 1) {
                 video.volume = volume;
 
@@ -14745,7 +14745,7 @@ var widget = $.widget;
             }
 
             $slide = $('<div class="vegas-slide"></div>');
-            
+
             if (this.support.transition && transition) {
                 $slide.addClass('vegas-transition-' + transition);
             }
@@ -14858,7 +14858,7 @@ var widget = $.widget;
                 if (video.readyState === 4) {
                     video.currentTime = 0;
                 }
-                
+
                 video.play();
                 go();
             } else {
@@ -14951,8 +14951,8 @@ var widget = $.widget;
             if (fn === 'init') {
                 params = [ this.settings ];
             } else {
-                params = [ 
-                    this.slide, 
+                params = [
+                    this.slide,
                     this.settings.slides[this.slide]
                 ];
             }
@@ -14973,7 +14973,7 @@ var widget = $.widget;
                 if (value === undefined) {
                     return this.settings[key];
                 }
-                this.settings[key] = value; 
+                this.settings[key] = value;
             } else {
                 return this.settings;
             }
@@ -14982,12 +14982,12 @@ var widget = $.widget;
             if (this.settings.slides !== oldSlides) {
                 this.total  = this.settings.slides.length;
                 this.noshow = this.total < 2;
-                this._preload();   
+                this._preload();
             }
         },
 
         destroy: function () {
-            clearTimeout(this.timeout); 
+            clearTimeout(this.timeout);
 
             this.$elmt.removeClass('vegas-container');
             this.$elmt.find('> .vegas-slide').remove();
@@ -15001,7 +15001,7 @@ var widget = $.widget;
             if (this.settings.overlay) {
                 this.$overlay.remove();
             }
-            
+
             this.elmt._vegas = null;
         }
     };
@@ -17692,7 +17692,7 @@ $(document).ready(function(){
         }
         else {
           // Insert as text;
-          toast.innerHTML = html; 
+          toast.innerHTML = html;
         }
         // Bind hammer
         var hammerHandler = new Hammer(toast, {prevent_default: false});
@@ -18001,7 +18001,7 @@ $(document).ready(function(){
               $('body').css('overflow', 'hidden');
               // Push current drag target on top of DOM tree
               $('body').append(dragTarget);
-              
+
               if (options.edge === 'left') {
                 dragTarget.css({width: '50%', right: 0, left: ''});
                 menu_id.velocity({left: 0}, {duration: 300, queue: false, easing: 'easeOutQuad'});
@@ -18242,9 +18242,9 @@ $(document).ready(function(){
 		    var offset = $(this.hash).offset().top + 1;
 
 //          offset - 200 allows elements near bottom of page to scroll
-			
+
 	    	$('html, body').animate({ scrollTop: offset - 200 }, {duration: 400, queue: false, easing: 'easeOutCubic'});
-			
+
 		  });
 		});
 		options = options || {

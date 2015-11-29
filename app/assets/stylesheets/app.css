@@ -30,13 +30,23 @@ a {
 	background-repeat: no-repeat, no-repeat, repeat-x;
 }
 
-nav ul li {
-  color: white;
-  font-size: 1.6rem;
-  padding: 15px;
+nav {
+
 }
 
-nav ul {
+nav ul li {
+  color: black;
+  font-size: 1.6rem;
+  padding: 15px;
+
+}
+
+nav ul li:hover {
+  border-bottom: 1px solid black;
+
+}
+nav ul li.active {
+  background-color: white;
 }
 
 .z-depth-0 {

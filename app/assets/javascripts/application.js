@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require vegas
@@ -17,7 +18,8 @@
 //= require jquery.ui.widget
 //= require jquery.iframe-transport
 //= require jquery.fileupload
-//= require cloudinary/jquery.cloudinary
+// require cloudinary/jquery.cloudinary
+//= require cloudinary
 //= require attachinary
 //= require vegas
 
