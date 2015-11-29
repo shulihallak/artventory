@@ -1,4 +1,5 @@
 require "application_responder"
+include ActionController::RespondWith
 
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
