@@ -36,6 +36,7 @@ gem 'pickadate-rails'
 
 
 gem 'pcs_vegas'
+gem "payday"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

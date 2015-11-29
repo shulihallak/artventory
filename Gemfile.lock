@@ -92,14 +92,27 @@ GEM
     mime-types (2.99)
     mini_portile (0.6.2)
     minitest (5.8.3)
+    money (6.6.1)
+      i18n (>= 0.6.4, <= 0.7.0)
     multi_json (1.11.2)
     netrc (0.11.0)
     nokogiri (1.6.6.4)
       mini_portile (~> 0.6.0)
+    payday (1.1.4)
+      i18n (~> 0.7)
+      money (~> 6.5)
+      prawn (~> 1.0.0)
+      prawn-svg (~> 0.15.0.0)
     pcs_vegas (0.0.1)
+    pdf-core (0.2.5)
     pg (0.18.3)
     pickadate-rails (3.5.6.0)
       railties (>= 3.1.0)
+    prawn (1.0.0)
+      pdf-core (~> 0.2.2)
+      ttfunk (~> 1.1.1)
+    prawn-svg (0.15.0.0)
+      prawn (>= 0.8.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -153,6 +166,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
+    ttfunk (1.1.1)
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -183,6 +197,7 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   jquery-ui-rails
+  payday
   pcs_vegas
   pg
   pickadate-rails

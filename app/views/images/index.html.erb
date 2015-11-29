@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Images</h1>
+<h1>All Images</h1>
 
 <table>
   <thead>
@@ -19,7 +19,7 @@
         <td><%= image.filename %></td>
         <td><%= image.title %></td>
         <td><%= image.dateCreated %></td>
-        <td>    <% image.photos.each do |photo| %>
+        <td data-link="<%= image_path(image) %>"><% image.photos.each do |photo| %>
                 <%= cl_image_tag(photo.path, { size: '100x100', crop: :fit }) %>
             <% end %>
           </td>

@@ -21,6 +21,9 @@ body {
   margin: 0;
 }
 
+a {
+  font-size: 1rem;
+}
 .animate-area	{
 	background-image: url(twitter-logo-bird.png), url(treehouseFrog.png), url(bg-clouds.png);
 	background-position: 20px -90px, 30px 80px, 0px 0px;
@@ -28,10 +31,13 @@ body {
 }
 
 nav ul li {
-  color: black;
+  color: white;
+  font-size: 1.6rem;
   padding: 15px;
 }
 
+nav ul {
+}
 
 .z-depth-0 {
 -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
@@ -228,7 +234,7 @@ sub {
  */
 
 img {
-  border: 0;
+  border: 1px solid #111;
 }
 
 /**

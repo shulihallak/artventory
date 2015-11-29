@@ -1,48 +1,43 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></h4>
 <div class="container">
   <h3>Image Information</h3>
-  <p>
-    <strong>Filename:</strong>
+  <h4>
+    Filename:
     <%= @image.filename %>
-  </p>
+  </h4>
 
-  <p>
-    <strong>Title:</strong>
+  <h4>
+    Title:
     <%= @image.title %>
-  </p>
-
-  <p>
+  </h4>
+  <h4>
+    Datecreated:
+    <%= @image.dateCreated %>
+  </h4>
+  <h4>
     <% @image.photos.each do |photo| %>
         <%= cl_image_tag(photo.path, { width: '500', crop: :fit }) %>
     <% end %>
-  </p>
+  </h4>
 
 
-
-  <p>
-    <strong>Datecreated:</strong>
-    <%= @image.dateCreated %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= @image.user_id %>
-  </p>
+<hr>
 
   <h3>Edition Information</h3>
   <% if @image.editions.any? %>
-  <ul>
+
     <% @image.editions.each do |e| %>
-    <li>Image Size: <%= e.size %></li>
-    <li>Number in Edition: <%= e.number %></li>
-    <li>Sold To: <%= e.soldTo %></li>
-    <li>Sale Date: <%= e.saleDate %></li>
-    <li>Sale Amount: <%= e.saleAmount %></li>
-    <li>Number Remaining in Edition: <%= e.numberRemaining %></li>
-  </ul>
+    <h4>Image Size: <%= e.size %></h4>
+    <h4>Number in Edition: <%= e.number %></h4>
+    <h4>Sold To: <%= e.soldTo %></h4>
+    <h4>Sale Date: <%= e.saleDate %></h4>
+    <h4>Sale Amount: <%= e.saleAmount %></h4>
+    <h4>Number Remaining in Edition: <%= e.numberRemaining %></h4>
+
   <%end%>
   <%end%>
   <%= link_to 'Edit', edit_image_path(@image) %> |
   <%= link_to 'Back', images_path %>
+  <%= link_to "PDF Invoice", image_path(@image, :format => 'pdf') %>
 
 </div>
