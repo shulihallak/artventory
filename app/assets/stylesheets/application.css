@@ -13,98 +13,12 @@
  *= require_tree .
  *= require_self
  */
- body {
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
- }
 
- main {
-   flex: 1 0 auto;
- }
+ /*
+ *= require jquery-ui
+ */
 
-
- .z-depth-0 {
- -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
- -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
- box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0);
- }
-
- h3 {
- font-weight: 100;
- text-align: center;
- }
-
- table {
-
- margin: 0 auto;
- }
-
- a {
- color: #9DBDC6;
- }
-
- .btn-flat {
-
- color: #272F32;
- background-color: white;
- border: 1px solid gray;
- text-transform: uppercase;
- }
-
- .btn {
- background-color: #9DBDC6;
- }
- .btn-floating{
- background-color: #9DBDC6;
- }
-
- .btn:hover, #add:hover{
- background-color: #272F32;
- }
-
-
- nav ul a,
- nav .brand-logo {
-   color: #444;
- }
- .nav:hover{
- 	background-color: #b2dfdb;
- }
-
- form {
- width: 100%;
- }
- ul .tabs {
- color: indigo;
- }
-
-
-
- /* label color */
-  .input-field label {
-    color: #000;
-  }
-  /* label focus color */
-  .input-field input[type=text]:focus + label {
-    color: #000;
-  }
-  /* label underline focus color */
-  .input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-  }
-  /* valid color */
-  .input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-  }
-  /* invalid color */
-  .input-field input[type=text].invalid {
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 #000;
-  }
-  /* icon prefix focus color */
-  .input-field .prefix.active {
-    color: #000;
-  }
+ /*
+*= require pickadate/default
+*= require pickadate/default.date
+ */
