@@ -1,7 +1,17 @@
 <nav class="navbar-fixed white z-depth-0">
   <ul class="right">
-    <li>Images</li>
-    <li>New Image</li>
-    <li>Profile</li>
+    <li> <a href="<%= images_path %>">Images</a></li>
+    <li><a href="<%= new_image_path%>">New Image</a></li>
+    <li><a href="#">User Profile</a></li>
+    <% if current_user %>
+    <hr/>
+    <!-- <form action="<%= session_path %>" method="POST">
+      <input type="hidden" name="authenticity_token"
+        value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Log Out!">
+    </form>
+    <% end %> -->
+
   </ul>
 </nav>
