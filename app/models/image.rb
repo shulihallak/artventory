@@ -7,5 +7,6 @@ class Image < ActiveRecord::Base
   # mount_uploader :picture, PictureUploader
 
 
+
   # validates_associated
 end

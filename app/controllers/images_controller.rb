@@ -35,13 +35,13 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to new_image_edition_path(@image), notice: 'Image was successfully created.' }
         format.json {
           render :show,
           status: :created,
           location: @image
         }
-
+        # redirect_to new_image_edition_path(@image)
       else
         format.html { render :new }
         format.json {
@@ -49,7 +49,7 @@ class ImagesController < ApplicationController
           status: :unprocessable_entity
         }
       end
-      # redirect_to image_editions_path
+
     end
   end
 

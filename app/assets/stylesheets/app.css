@@ -16,12 +16,6 @@ html {
  * Remove default margin.
  */
 
-body.home {
- background-image: url('http://res.cloudinary.com/photogr8/image/upload/o_19/v1448851982/cn0ndab90mijcwdod79z.png');
- background-repeat: no-repeat;
-
-}
-
 a {
   font-size: 1rem;
 }
@@ -31,8 +25,8 @@ a {
 	background-repeat: no-repeat, no-repeat, repeat-x;
 }
 
-nav {
-
+a:hover, a:hover:after {
+  background-color: white;
 }
 
 nav ul li a{
@@ -46,9 +40,8 @@ nav ul li:hover {
   border-bottom: 1px solid black;
 
 }
-nav ul li.active {
-  background-color: white;
-}
+
+nav
 
 .z-depth-0 {
 -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);

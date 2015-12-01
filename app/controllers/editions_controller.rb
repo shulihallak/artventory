@@ -12,7 +12,7 @@ class EditionsController < ApplicationController
   # GET /editions/1.json
   def show
     image = Image.find(params[:image_id])
-    @edition = image.edition.find(params[:image_id])
+    @edition = image.editions.find(params[:image_id])
 
 
   end
@@ -20,7 +20,7 @@ class EditionsController < ApplicationController
   # GET /editions/new
   def new
     image = Image.find(params[:image_id])
-    @edition = image.edition
+    @edition = image.editions
   end
 
   # GET /editions/1/edit
